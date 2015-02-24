@@ -13,7 +13,7 @@ var initMap = function () {
     var startPosition = [48.866600401120644, 2.351692198135424];
     // OpenStreetMaps
     var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-
+    
     map = L.map('map', {
         center: startPosition,
         zoom: 2,
@@ -22,7 +22,7 @@ var initMap = function () {
 }
 
 var loadGeoJsonData = function () {
-    $.getJSON('/cities.json', null, function (data) {
+    $.getJSON('/cities.geojson', null, function (data) {
         L.geoJson(data).addTo(map);
     });
 }

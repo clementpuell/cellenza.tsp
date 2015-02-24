@@ -30,11 +30,11 @@ namespace Cellenza.Tsp
             // Configure the HTTP request pipeline.
             // Add the console logger.
             loggerfactory.AddConsole();
-            
+
             // Add static files to the request pipeline.
             var options = new StaticFileOptions();
             var contentType = new FileExtensionContentTypeProvider();
-            contentType.Mappings.Add(".json", "application/json");
+            contentType.Mappings.Add(".geojson", "application/json");
             options.ContentTypeProvider = contentType;
             app.UseStaticFiles(options);
         }
