@@ -1,0 +1,83 @@
+﻿{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Washington"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.03661346749868,
+                    38.89508112966558
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Saint-Pétersbourg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.316120144561864,
+                    59.93934694670652
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Hong Kong"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    114.16268634769949,
+                    22.279256234286755
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Nairobi"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.81729698102572,
+                    -1.2833447124612078
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Buenos Aires"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -58.44503402709961,
+                    -34.612922763614385
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Auckland"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    174.7650146484375,
+                    -36.85292256192415
+                ]
+            }
+        }
+    ]
+}
