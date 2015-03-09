@@ -1,28 +1,17 @@
-﻿/// <reference path="../lib/jquery/jquery.js" />
-/// <reference path="../leaflet/leaflet-src.js" />
+﻿/// <reference path="cpu.js" />
 
-var map;
+var Tsp = function (cities) {
+    var cpu = new Cpu();
 
-window.onload = function () {
-    initMap();
-    loadGeoJsonData();
-}
+    this.getStartingCity = function () {
+        return cities[0];
+    };
 
-var initMap = function () {
-    // Cellenza
-    var startPosition = [48.866600401120644, 2.351692198135424];
-    // OpenStreetMaps
-    var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-    
-    map = L.map('map', {
-        center: startPosition,
-        zoom: 2,
-        layers: osm,
-    });
-}
+    this.cpuStartAsync = function () {
+        setTimeout(function () {
+            var distance = cpu.resolve(cities, start);
+        }, 100);
+    };
 
-var loadGeoJsonData = function () {
-    $.getJSON('/cities.geojson', null, function (data) {
-        L.geoJson(data).addTo(map);
-    });
-}
+    var start = this.getStartingCity();
+};
