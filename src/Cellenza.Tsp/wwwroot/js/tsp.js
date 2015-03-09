@@ -1,17 +1,32 @@
-﻿/// <reference path="cpu.js" />
+﻿/// <reference path="../leaflet/leaflet-src.js" />
+/// <reference path="cpu.js" />
 
 var Tsp = function (cities) {
-    var cpu = new Cpu();
-
     this.getStartingCity = function () {
         return cities[0];
     };
 
     this.cpuStartAsync = function () {
         setTimeout(function () {
-            var distance = cpu.resolve(cities, start);
+            var distance = _cpu.resolve(cities, _start);
         }, 100);
     };
 
-    var start = this.getStartingCity();
+    var _highlightStartingCity = function () {
+        var marker = _start.layer;
+        marker.setIcon(new _StartingCityIcon());
+    };
+
+    var _StartingCityIcon = L.Icon.extend({
+        options: {
+            iconUrl: "/images/starting-city-icon.png"
+        }
+    });
+
+    // Constructeur
+
+    var _cpu = new Cpu();
+    var _start = this.getStartingCity();
+
+    _highlightStartingCity();
 };

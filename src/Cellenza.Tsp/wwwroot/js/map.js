@@ -33,8 +33,16 @@ var initMap = function () {
 };
 
 var loadGeoJsonData = function () {
+    cities = [];
+
     return $.getJSON('/cities.geojson', null, function (data) {
-        L.geoJson(data).addTo(map);
-        cities = data.features;
+        L.geoJson(data, {
+            onEachFeature: function (feature, layer) {
+                cities.push({
+                    feature: feature,
+                    layer: layer
+                });
+            }
+        }).addTo(map);
     });
 };
